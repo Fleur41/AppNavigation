@@ -1,5 +1,6 @@
 package com.sam.appnavigation.navigation
 
+import android.provider.SyncStateContract.Constants
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
@@ -7,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import com.sam.appnavigation.navigation.detail.DetailScreen
 import com.sam.appnavigation.navigation.home.HomeScreen
 
@@ -29,7 +31,16 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                 navArgument("userId"){
                     type = NavType.StringType
                 }
-            )
+            ),
+
+//            deepLinks = listOf(
+//                navDeepLink {
+//                    uriPattern = "${Constants.App.SHORT_WEB_URL}/${Constants.Value.orders}/${Constants.Value.orderId}"
+//                },
+//                navDeepLink {
+//                    uriPattern = "${Constants.App.WEBSITE}/${Constants.Value.orders}/${Constants.Value.orderId}"
+//                }
+//            )
         ) { backStackEntry ->
             val userId = backStackEntry.arguments?.getString("userId") ?: return@composable
 

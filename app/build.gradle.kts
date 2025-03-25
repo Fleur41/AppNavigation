@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation (libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.common.ktx)
 //    implementation(libs.coil.compose)
 
 //    implementation(libs.coil.network.okhttp)
